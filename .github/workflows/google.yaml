@@ -8,7 +8,7 @@ on:
 jobs:
   setup-deploy:
     name: Setup and Deploy Infrastructure
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-16.04
     steps:
       - name: Checkout
         uses: actions/checkout@master
@@ -26,19 +26,19 @@ jobs:
       - name: 'Terraform Init'
         uses: hashicorp/terraform-github-actions@master
         with:
-          tf_actions_version: 0.12.23
+          tf_actions_version: 0.12.24
           tf_actions_subcommand: 'init'
 
       - name: 'Terraform Validate'
         uses: hashicorp/terraform-github-actions@master
         with:
-          tf_actions_version: 0.12.23
+          tf_actions_version: 0.12.24
           tf_actions_subcommand: 'validate'
 
       - name: 'Terraform Apply'
         uses: hashicorp/terraform-github-actions@master
         with:
-          tf_actions_version: 0.12.23
+          tf_actions_version: 0.12.24
           tf_actions_subcommand: 'apply'
         env:
           TF_VAR_project: ${{ secrets.GKE_PROJECT }}
