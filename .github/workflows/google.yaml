@@ -48,9 +48,9 @@ jobs:
           TF_VAR_max_node_count: 5
           TF_VAR_cluster_name: api-playground
 
-      - name: 'Apply K8S secrets'
-        run: |
-          gcloud container clusters get-credentials api-playground --zone us-central1-a --project ${{ secrets.GKE_PROJECT }}
-          gcloud components install beta
-          gcloud beta secrets versions access latest --secret=K8S_SECRET_YAML --project ${{ secrets.GKE_PROJECT }} > ./secret.yaml
-          kubectl apply -f ./secret.yaml
+      # - name: 'Apply K8S secrets'
+      #   run: |
+      #     gcloud container clusters get-credentials api-playground --zone us-central1-a --project ${{ secrets.GKE_PROJECT }}
+      #     gcloud components install beta
+      #     gcloud beta secrets versions access latest --secret=K8S_SECRET_YAML --project ${{ secrets.GKE_PROJECT }} > ./secret.yaml
+      #     kubectl apply -f ./secret.yaml
