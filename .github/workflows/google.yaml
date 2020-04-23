@@ -26,25 +26,19 @@ jobs:
       - name: 'Terraform Init'
         uses: hashicorp/terraform-github-actions@master
         with:
-          tf_actions_version: 0.12.24
+          tf_actions_version: 0.12.23
           tf_actions_subcommand: 'init'
 
       - name: 'Terraform Validate'
         uses: hashicorp/terraform-github-actions@master
         with:
-          tf_actions_version: 0.12.24
+          tf_actions_version: 0.12.23
           tf_actions_subcommand: 'validate'
-
-      - name: 'Terraform Validate'
-        uses: hashicorp/terraform-github-actions@master
-        with:
-          tf_actions_version: 0.12.24
-          tf_actions_subcommand: 'force-unlock 1587658328048863'
 
       - name: 'Terraform Apply'
         uses: hashicorp/terraform-github-actions@master
         with:
-          tf_actions_version: 0.12.24
+          tf_actions_version: 0.12.23
           tf_actions_subcommand: 'apply'
         env:
           TF_VAR_project: ${{ secrets.GKE_PROJECT }}
