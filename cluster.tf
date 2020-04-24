@@ -30,7 +30,7 @@ resource "google_container_cluster" "cluster" {
   initial_node_count       = 1
 
   release_channel {
-    channel = "REGULAR"
+    channel = "RAPID"
   }
 
   resource_labels = {
